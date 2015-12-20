@@ -1,0 +1,27 @@
+- model_class = Post
+/div class="page-header"
+/  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table class="table table-striped"
+  thead
+    tr
+      th= "User"
+      th= "Title"
+      th= "Body"
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @posts.each do |post|
+      tr
+        td
+          = post.user.email
+          br
+          a href="posts/#{post.id}" = image_tag(post.user.avatar.url(:thumb))
+        td= post.title
+        td= post.body
+        td
+          - if current_user.has_role? :admin or current_user.id == post.user_id
+            = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(post), :class => 'btn btn-default btn-xs'
+            br
+            = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_post_path, :class => 'btn btn-primary'
+
