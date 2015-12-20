@@ -80,8 +80,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :port => 587,
     :address => "andboxa42d6e702e5f42b1ad74e5afeebac7e7.mailgun.org",
-    :user_name => "postmaster@sandboxa42d6e702e5f42b1ad74e5afeebac7e7.mailgun.org",
-    :password => "46d515ec2b3df8f3478c9c7ea78bcc4a"
+    :user_name => ENV["MAILGUN_USERNAME"],
+    :password => ENV["MAILGUN_PASSWORD"]
   }
   config.action_mailer.default_url_options = { :host => 'http://nameless-chamber-5910.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
