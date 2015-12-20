@@ -26,10 +26,10 @@ module Blog
 end
 
 # Exception Notification
-Rails.application.config.middleware.use ExceptionNotification::Rack,
-  :email => {
-    :email_prefix => "[Rails application for muni error] ",
-    :sender_address => '"Notifier" ',
-    :exception_recipients => %w{navry991@gmail.com}
-  }
+#Rails.application.config.middleware.use ExceptionNotification::Rack,
+#  :email => {
+#    :email_prefix => "[Rails application for muni error] ",
+#    :sender_address => '"Notifier" ',
+#    :exception_recipients => %w{navry991@gmail.com}
+#  }
 

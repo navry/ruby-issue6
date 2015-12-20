@@ -76,4 +76,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.smtp_settings = {
+    :port => 587,
+    :address => "andboxa42d6e702e5f42b1ad74e5afeebac7e7.mailgun.org",
+    :user_name => "postmaster@nameless-chamber-5910.herokuapp.com",
+    :password => "95e509e7f2e60244598a599f51145252"
+  }
+  config.action_mailer.default_url_options = { :host => 'http://nameless-chamber-5910.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 end
