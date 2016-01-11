@@ -1,8 +1,8 @@
 
 - model_class = Post
-- if current_user.has_role? :admin or current_user.id == @post.user_id
-  div class="page-header"
-    h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
-  = render :partial => "form"
-- else
-  h1 You don't have access to this...
+/- if current_user.has_role? :admin or current_user.id == @post.user_id
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"
+/- else
+/  h1 You don't have access to this...
