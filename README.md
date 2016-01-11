@@ -18,8 +18,10 @@ Passwd
 sdfsdfsdf
 ```
 
-# Vytvořte Ruby on Rails (RoR) aplikaci s využitím probíraných gemů:
+# Zadani
 ```
+Vytvořte Ruby on Rails (RoR) aplikaci s využitím probíraných gemů:
+
 1. Výsledkem vaší práce bude jednoduchá blogovací platforma s použitím probíraných gemů.
 2. Vytvořte novou Rails aplikaci a nasaďte na ni exception\_notification, pry, better_errors a web-console.
 3. Mohou se zaregistrovat noví uživatelé (gem devise) a přidávat příspěvky.
